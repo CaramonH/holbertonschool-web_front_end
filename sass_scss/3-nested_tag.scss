@@ -1,0 +1,8 @@
+/* Sass file that assigns no margin/padding out of body and margin 10px in body */
+body {
+  margin: 0px;
+  padding: 0px;
+  p {
+    margin: 10px;
+  }
+}
