@@ -191,6 +191,10 @@
     display: table;
     clear: both;
   } */
+
+  .row {
+    display: flex;
+  }
   
   [class*='col-'] {
     /*float: left;*/
