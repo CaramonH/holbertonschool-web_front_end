@@ -1,5 +1,5 @@
 let roomDimensions = {
-  width: 50,
+    width: 50,
 	length: 100,
 	getArea: () => this.width * this.length
 };
