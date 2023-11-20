@@ -4,18 +4,14 @@
 <head>
 
 	<meta charset="utf-8" />
-	<title>Task 5</title>
+	<title>Task 6</title>
 	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
 		integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 
 	<script type="application/javascript">
 		$(document).ready(function () {
             createFamilyTree();
-            addNewMember('Guillaume', 'Salva');
-            addNewMember('Arielle', "Snizt");
-            addNewMember('Fanette', 'Snizt');
-            addNewMember('Gerard', 'Snizt');
-            addNewMember('Victor', 'Salza');
+            createForm();
         });
 
         function createFamilyTree() {
@@ -36,9 +32,23 @@
                 });
         };
 
-        createForm() {
-            
-        }
+        function createForm() {
+            $('table').before(`<form>
+                                    <input type="text">
+                                    <input type="text">
+                                    <select>
+                                        <option value="before">Before</option>
+                                        <option value="after">After</option>
+                                    </select>
+                                    <input type="button" id="submit" value="Submit">
+                                </form>`);
+
+            $('#submit').click(function () {
+				addNewMember($('input:first').val(),
+					$('input:nth-of-type(2)').val(),
+					$('select').find(":selected").text().toLowerCase());
+			});
+        };
 
 	</script>
 
