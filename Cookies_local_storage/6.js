@@ -1,6 +1,6 @@
 let availableItems = ['Shampoo', 'Soap', 'Sponge', 'Water'];
 
-if (!localStorage) {
+if (!sessionStorage) {
   alert(
     'Sorry, your browser does not support Web storage. Try again with a better one.'
   );
@@ -10,7 +10,7 @@ if (!localStorage) {
 }
 
 function addItemToCart(item) {
-  localStorage.setItem(item, true);
+  sessionStorage.setItem(item, true);
 }
 
 function createStore() {
@@ -28,9 +28,9 @@ function createStore() {
 }
 
 function displayCart() {
-  if (localStorage) {
+  if (sessionStorage) {
     const p = document.createElement('p');
-    p.innerHTML = `You previously had ${localStorage.length} items in your cart`;
+    p.innerHTML = `You previously had ${sessionStorage.length} items in your cart`;
     document.body.appendChild(p);
   }
 }
